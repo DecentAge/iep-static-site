@@ -12,5 +12,5 @@ mkdir -p /usr/share/nginx/html/iep-check-balance
 cp -rfv /iep-static-site/sites/iep-check-balance/* /usr/share/nginx/html/iep-check-balance
 
 echo "Setting environment variables in /usr/share/nginx/html"
-envsubst < /usr/share/nginx/html/iep-tools/index.html > /usr/share/nginx/html/index.html
-envsubst < /usr/share/nginx/html/iep-check-balance/scripts/bundle.min.js > /usr/share/nginx/html/scripts/bundle.min.js
+envsubst < /iep-static-site/sites/iep-tools/index.html > /usr/share/nginx/html/iep-tools/index.html
+envsubst < /iep-static-site/sites/iep-check-balance/scripts/bundle.min.js > /usr/share/nginx/html/iep-check-balance/scripts/bundle.min.js
