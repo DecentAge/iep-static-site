@@ -8,6 +8,7 @@ cp -rfv /iep-static-site/sites/master-config/* /usr/share/nginx/html/master-conf
 
 mkdir -p /usr/share/nginx/html/iep-tools
 cp -rfv /iep-static-site/sites/iep-tools/* /usr/share/nginx/html/iep-tools
+mkdir -p /usr/share/nginx/html/iep-check-balance
 cp -rfv /iep-static-site/sites/iep-check-balance/* /usr/share/nginx/html/iep-check-balance
 
 echo "Setting environment variables in /usr/share/nginx/html"
