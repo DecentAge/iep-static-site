@@ -9,6 +9,7 @@ server {
 	
 	location ${NGINX_PATH}/iep-tools {
 		alias /usr/share/nginx/html/iep-tools;
+		try_files $uri $uri/ $uri.html =404;
 		index index.html;
 	}
 }
