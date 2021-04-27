@@ -1,0 +1,8 @@
+server {
+	listen ${NGINX_PORT};
+	root /usr/share/nginx/html;	
+	location ${NGINX_PATH} {
+		add_header  Content-Type    application/json;
+		alias /usr/share/nginx/html/;
+	}
+}
