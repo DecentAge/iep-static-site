@@ -1,2 +1,3 @@
 #!/bin/bash
-docker build -t decentage/iep-static-site:latest .
+docker build -t decentage/iep-servicemonitor-ui:latest .
+
