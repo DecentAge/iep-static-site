@@ -1,0 +1,51 @@
+<div class="main-wrapper">
+	<header>
+		<div class="container text-center" style="position: relative;">
+			<a class="bck-btn btn pull-left" href="/iep-static-site/iep-tools">
+				<span class="icon-back"></span>
+				<p>BACK</p>
+			</a>
+			<a href="/" class="site-logo">
+				<img src="images/iep-logo.png" alt="">
+			</a>
+		</div>
+	</header>
+	<section class="main-section">
+		<div class="container text-center">
+			<div class="check-balance">
+				<h2 class="title"> check your balance </h2>
+				<div class="conversion-cricle">
+					<div class="conversion-wrap">
+						<div class="conversion-amt">
+							{{accountCompleteDetails.balanceTQT | amountTQT }}
+						</div>
+						<div class="conversion-unit">
+							XIN
+						</div>
+					</div>
+
+				</div>
+
+				<form name="checkBalance">
+
+					<p style="text-align:left; margin-top:20px; font-size: 13px; font-weight: 600;"> Account Address </p>
+					<div class="check-form">
+						<span class="unit-text"> <span class="icon-Wallet wallet"> </span> </span>
+						<input type="text" class="form-control" id="account" onclick='this.value = ""' ng-model="checkBalance.account" placeholder="_____ - _____ - _____ - _____" minlength="24">
+					</div>
+					<button type="submit" class="check-btn btn" ng-disabled="!checkBalance.$valid" ng-click="getAccountDetailsFromId(checkBalance.account)">
+						<p>CHECK</p>
+						<span class="icon-check">
+							<span class="path1"></span><span class="path2"></span>
+			            </span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container text-center">
+			<p> This website is owned by the Infinity community and managed by Infinity Foundation</p>
+		</div>
+	</footer>
+</div>
