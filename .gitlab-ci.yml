@@ -26,7 +26,7 @@ deploy-k8s:
   stage: deploy
   before_script:
     - apk add -u gettext
-    - kubectl describe service iep-static-site-load-balancer -n gitlab-infinity-staging || kubectl create -f service.yaml -n gitlab-infinity-staging
+    - kubectl create -f service.yaml -n gitlab-infinity-staging
     - kubectl create secret docker-registry regcred --docker-server=$CI_REGISTRY --docker-username="$CI_DEPLOY_USER" --docker-password="$CI_DEPLOY_PASSWORD" --docker-email="$GITLAB_USER_EMAIL" --dry-run=true -o yaml | kubectl apply -f -
   environment: 
     name: staging
