@@ -1,34 +1,6 @@
-#include:
-#  - project: 'infinity-economics/iep-infrastructure'
-#    file: '/gitlab-ci/docker-build-publish.yml'
-
-stages:
-  - build
-  - deploy
-
-build:
-  image: docker:18.09
-  stage: build
-  #variables:
-  #  DOCKER_HOST: tcp://docker:2376
-  #  DOCKER_TLS_CERTDIR: "/certs"
-  services:
-    - docker:18.09-dind
-  before_script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-  script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-    - docker push "$CI_REGISTRY_IMAGE"
-
-deploy-k8s:
-  image: dtzar/helm-kubectl
-  #image: akashkaveti/base_image:latest
-  stage: deploy
-  before_script:
-    - apk add -u gettext
-    - kubectl create -f service.yaml -n gitlab-infinity-staging
-    - kubectl create secret docker-registry regcred --docker-server=$CI_REGISTRY --docker-username="$CI_DEPLOY_USER" --docker-password="$CI_DEPLOY_PASSWORD" --docker-email="$GITLAB_USER_EMAIL" --dry-run=true -o yaml | kubectl apply -f -
-  environment: 
-    name: staging
-  script:
-    - VERSION="${CI_COMMIT_TAG:-none}" envsubst < deployment.yaml | kubectl apply -f -
+variables:
+  DOCKER_SERVICE_NAME: "static-site"
+  
+include:
+  - project: 'infinity-economics/iep-infrastructure'
+    file: '/gitlab-ci/docker-build-publish.yml'
