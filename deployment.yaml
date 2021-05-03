@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iep-static-site
+  labels:
+    app: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: iep-static-site
+  template:
+    metadata:
+      labels:
+        run: iep-static-site
+    spec:
+      containers:
+        - name: iep-static-site
+          image:  registry.gitlab.com/infinity-economics/iep-static-site:latest
+          #image: registry.gitlab.com/infinity-economics/nginx/master:latest
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: regcred   
