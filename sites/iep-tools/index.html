@@ -17,6 +17,9 @@
 </head>
 <body>
 <div class="main-wrapper">
+	<nav id="testnet-warning" class="navbar bg-danger text-danger text-center" style="line-height:46px;border-radius:0;display:none">
+		WARNING: You are currently viewing the IE Tools entry page for TESTNET
+	</nav>
 	<header>
 		<div class="container-fluid text-center" style="position: relative;">
 			<a class="bck-btn btn pull-left" href="https://www.infinity-economics.io">
@@ -26,6 +29,9 @@
 			<a href="https://www.infinity-economics.io" class="site-logo">
 				<img src="assets/images/iep-logo.png" alt="">
 			</a>
+			<button id="chain-switcher" type="button" class="btn btn-danger pull-right" data-toggle="tooltip" data-placement="top" style="font-weight:600">
+				
+			</button>
 		</div>
 	</header>
 	<section class="main-section">
@@ -116,5 +122,31 @@
 </div>
 <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script>
+$(function () {
+	var chain = '${IEP_NETWORK}';
+	var chainSwitcher = $("#chain-switcher");
+
+	chainSwitcher.on("click", function() {
+		if (chain === "testnet") {
+			window.location = "https://apps.infinity-economics.io/iep-static-site/iep-tools/"
+		} else {
+			window.location = "https://apps-test.infinity-economics.io/iep-static-site/iep-tools/"
+		}
+	})
+	
+	if (chain === "testnet") {
+		$("#testnet-warning").show();
+		chainSwitcher.html("TESTNET");
+		$('[data-toggle="tooltip"]').tooltip({title: "Click to switch network to mainnet"});
+	} else if (chain === "mainnet") {
+		chainSwitcher.html("MAINNET");
+		$('[data-toggle="tooltip"]').tooltip({title: "Click to switch network to testnet"});
+	} else {
+		chainSwitcher.hide();
+	}
+})
+
+</script>
 </body>
 </html>
