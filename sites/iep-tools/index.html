@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="main-wrapper">
-	<nav id="testnet-warning" class="navbar bg-danger text-danger text-center" style="line-height:46px;border-radius:0;display:none">
+	<nav id="testnet-warning" class="navbar text-danger text-center" style="line-height:46px;border-radius:0;display:none;background:#fff;">
 		WARNING: You are currently viewing the IE Tools entry page for TESTNET
 	</nav>
 	<header>
@@ -33,6 +33,7 @@
 				
 			</button>
 		</div>
+		<h1 id="main-title" class="text-center" style="margin-top:60px"></h1>
 	</header>
 	<section class="main-section">
 		<!--
@@ -124,8 +125,9 @@
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script>
 $(function () {
-	var chain = '${IEP_NETWORK}';
+	var chain = '${NETWORK_ENVIRONMENT}';
 	var chainSwitcher = $("#chain-switcher");
+	var h1 = $("#main-title");
 
 	chainSwitcher.on("click", function() {
 		if (chain === "testnet") {
@@ -138,9 +140,13 @@ $(function () {
 	if (chain === "testnet") {
 		$("#testnet-warning").show();
 		chainSwitcher.html("TESTNET");
+		h1.html("TESTNET");
+		document.title = "IE Tools | testnet";
 		$('[data-toggle="tooltip"]').tooltip({title: "Click to switch network to mainnet"});
 	} else if (chain === "mainnet") {
 		chainSwitcher.html("MAINNET");
+		h1.html("MAINNET");
+		document.title = "IE Tools | mainnet";
 		$('[data-toggle="tooltip"]').tooltip({title: "Click to switch network to testnet"});
 	} else {
 		chainSwitcher.hide();

@@ -30,7 +30,7 @@ a:focus, a:hover {
   text-decoration: none; }
 
 header {
-  padding: 60px 0; }
+  padding: 60px 0 0 0; }
   @media (min-width: 481px) and (max-width: 767px) {
     header {
       padding: 34px 0; } }
@@ -249,8 +249,7 @@ footer {
 
 .bck-btn {
   background-color: transparent;
-  position: absolute;
-  left: 30px;
+  left: 10px;
   top: 10px; }
   .bck-btn:active {
     box-shadow: none;
