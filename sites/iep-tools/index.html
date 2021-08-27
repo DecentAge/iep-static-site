@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width initial-scale=1">
-	<title>IE Tools</title>
+	<title>IE Tools | ${IEP_NETWORK_ENVIRONMENT}</title>
 	<link rel="shortcut icon" href="assets/images/favicon.ico"/>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="assets/css/fontsStyle.css"/>
@@ -33,7 +33,7 @@
 				
 			</button>
 		</div>
-		<h1 id="main-title" class="text-center" style="margin-top:60px"></h1>
+		<h1 id="main-title" class="text-center" style="margin-top:60px">${IEP_NETWORK_ENVIRONMENT}</h1>
 	</header>
 	<section class="main-section">
 		<!--
@@ -125,7 +125,7 @@
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script>
 $(function () {
-	var chain = '${NETWORK_ENVIRONMENT}';
+	var chain = '${IEP_NETWORK_ENVIRONMENT}';
 	var chainSwitcher = $("#chain-switcher");
 	var h1 = $("#main-title");
 
