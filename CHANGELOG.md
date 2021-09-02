@@ -1,3 +1,7 @@
+# Release 0.3.2
+- added readme
+- added a title to indicate what network you currently are vieweing
+
 # Release 0.3.1
 - Minimale Testumgebung  für das EP  Test- und Mainnet(eigener Genesis)
 - Produktion 10 Node verteilt auf 3 RZ (Hetzner)
