@@ -8,6 +8,6 @@ ENV IEP_CHAIN=mainnet
 COPY ./sites /iep-static-site/sites
 COPY ./default.conf.template /etc/nginx/templates/default.conf.template
 COPY 30-iep-startup-script.sh /docker-entrypoint.d/30-iep-startup-script.sh
-RUN chmod 775 /docker-entrypoint.d/30-nginx-iep-startup-script.sh
+RUN chmod 775 /docker-entrypoint.d/30-iep-startup-script.sh
 EXPOSE ${NGINX_PORT}
 CMD ["nginx", "-g", "daemon off;"]
