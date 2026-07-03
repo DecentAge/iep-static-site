@@ -1,3 +1,13 @@
+# Changelog
+
+## [Unreleased]
+
+## [0.4.1] - 2026-06-24
+### Changed
+- Build script cleanup.
+
+## [0.3.x and earlier]
+
 # Release 0.3.3
 
 # Release 0.3.2
