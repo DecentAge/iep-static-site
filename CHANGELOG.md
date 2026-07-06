@@ -2,9 +2,10 @@
 
 ## [Unreleased]
 
-## [0.4.1] - 2026-06-24
+## [0.4.1] - 2026-07-06
 ### Changed
 - Build script cleanup.
+- Updated the Secure Wallet version label on the tools landing page to v0.4.1.
 
 ## [0.3.x and earlier]
 
