@@ -10,5 +10,6 @@ mkdir -p /usr/share/nginx/html/iep-check-balance
 cp -rfv /iep-static-site/sites/iep-check-balance/* /usr/share/nginx/html/iep-check-balance
 
 echo "Setting environment variables in /usr/share/nginx/html"
+export IEP_RELEASE_VERSION="$(cat /iep-static-site/release-version.txt 2>/dev/null || echo '')"
 envsubst < /iep-static-site/sites/iep-tools/index.html > /usr/share/nginx/html/iep-tools/index.html
 envsubst < /iep-static-site/sites/iep-check-balance/index.html > /usr/share/nginx/html/iep-check-balance/index.html
