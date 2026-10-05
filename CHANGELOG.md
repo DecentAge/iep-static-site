@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-10-05
+### Changed
+- Display the wallet version from release-version.txt, substituted at startup.
+
 ## [0.4.1] - 2026-07-06
 ### Changed
 - Build script cleanup.
