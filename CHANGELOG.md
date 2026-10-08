@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [0.4.3] - 2026-10-08
+### Fixed
+- Redirect the bare root URL to the tools page.
+
 ## [0.4.2] - 2026-10-05
 ### Changed
 - Display the wallet version from release-version.txt, substituted at startup.
