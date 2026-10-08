@@ -1,6 +1,11 @@
 server {
 	listen ${NGINX_PORT};
 	root /usr/share/nginx/html;	
+
+	location = / {
+		absolute_redirect off;
+		return 301 ${NGINX_PATH}/iep-tools/;
+	}
 	
 	location ${NGINX_PATH}/master-config {
 		add_header  Content-Type    application/json;
